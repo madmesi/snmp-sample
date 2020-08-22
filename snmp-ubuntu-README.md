@@ -62,3 +62,13 @@ syslocation     VASL INFRA, Tehran, IR
 syscontact      Mohammad Meskarian, Email:mohammadmeskarian@gmail.com, Cellphone: 09125984305
 ```
 Also remember to allow snmpd on firewall.
+
+walk:
+```
+# on localhost
+snmpwalk -v 2c -c MyCOMMUNITY! -O e 127.0.0.1
+# other servers in the network (like the centos server):
+snmpwalk -v 2c -c MyCOMMUNITY! -O e 192.168.109.137
+```
+
+Note: remember, walking to localhost or other servers may not be possible due to the policy you define in the community.
