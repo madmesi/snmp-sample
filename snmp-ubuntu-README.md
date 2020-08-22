@@ -24,8 +24,14 @@ agentaddress    udp6:161
 # com2sec    <sec.name>          <monitor_server>        <community_password>
 # com2sec6   <sec.name>          <monitor_server_ipv6>   <community_password>
 # community name is a string.
-com2sec     AllowSpecific       192.168.109.136           MyCOMMUNITY!
-com2sec     AllowAll            192.168.109.136           MyCOMMUNITY!
+
+# if you want the ubuntu server be the only snmpd server in the vlan do this.
+# com2sec     AllowSpecific       192.168.109.136           MyCOMMUNITY!
+# com2sec     AllowAll            192.168.109.136           MyCOMMUNITY!
+
+# if you want the ubuntu server be like the other servers in the vlan to send and receive traps:
+com2sec     AllowSpecific       default           MyCOMMUNITY!
+com2sec     AllowAll            default           MyCOMMUNITY!
 
 # @@ Secondly, Map the security name into a group
 # group.name sec.model               sec.name
