@@ -63,6 +63,11 @@ systemctl status snmpd
 ```
 
 Also remember to allow snmpd on firewall.
+```
+echo '-A INPUT -m state --state NEW -m udp -p udp --dport 161 -j ACCEPT' >> /etc/sysconfig/iptables.extra
+lokkit --custom-rules=ipv4:filter:/etc/sysconfig/iptables.extra
+
+```
 
 walk:
 ```
