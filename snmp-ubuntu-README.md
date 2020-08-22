@@ -10,7 +10,7 @@ apt-get install snmpd
 The configuration file is located at “/etc/snmp/snmpd.conf
 Insructions to securly install snmpd service with a given address:
 
-
+The ip of the ubuntu server : 192.168.109.136
 ```
 vim /etc/snmp/snmpd.conf
 
@@ -55,3 +55,4 @@ access      AllGroup        ""      any     noauth  exact   AllView     none    
 syslocation     VASL INFRA, Tehran, IR
 syscontact      Mohammad Meskarian, Email:mohammadmeskarian@gmail.com, Cellphone: 09125984305
 ```
+Also remember to allow snmpd on firewall.
